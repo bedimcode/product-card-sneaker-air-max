@@ -58,12 +58,12 @@ a{
     text-decoration: none;
 }
 /*=====  LAYOUT =====*/
-.bd-grid{
+.grid{
     max-width: 1200px;
     margin-left: 1rem;
     margin-right: 1rem;
 }
-.l-header{
+.header{
     width: 100%;
     position: fixed;
     top: 0;
@@ -340,7 +340,7 @@ a{
     
 }
 @media screen and (min-width: 1200px){
-    .bd-grid{
+    .grid{
         margin-left: auto;
         margin-right: auto;
     }
