@@ -1,23 +1,26 @@
+/*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-/*===== VARIABLES CSS Y SASS =====*/
-/*Varibles sass*/
-/*Variables css*/
-/*===== Colores =====*/
+/*===== VARIABLES CSS =====*/
 :root {
+  --header-height: 3.5rem;
+  /*===== Colors =====*/
   --first-color: #A29596;
   --primary: #A29596;
   --second-color: #33303D;
   --black-color: #111111;
   --white-color: #FFF;
-}
-
-/*===== Fuente y tipografia =====*/
-:root {
+  /*===== Font and typography =====*/
   --body-font: 'Roboto', sans-serif;
   --biggest-font-size: 1.5rem;
   --big-font-size: 1.5rem;
-  --normal-font-size: 0.938rem;
-  --smaller-font-size: 0.75rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-bold: 700;
+  /*===== z index =====*/
+  --z-fixed: 100;
+  --z-modal: 1000;
 }
 
 @media screen and (min-width: 968px) {
@@ -25,27 +28,16 @@
     --biggest-font-size: 3.25rem;
     --big-font-size: 2.25rem;
     --normal-font-size: 1rem;
-    --smaller-font-size: 0.813rem;
+    --smaller-font-size: .813rem;
   }
-}
-
-/*===== z index =====*/
-:root {
-  --z-back: -10;
-  --z-normal: 1;
-  --z-tooltip: 10;
-  --z-fixed: 100;
-  --z-modal: 1000;
 }
 
 /*===== BASE =====*/
 *, ::before, ::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 3rem 0 0 0;
   font-family: var(--body-font);
   background-color: var(--white-color);
   color: var(--black-color);
@@ -81,38 +73,31 @@ a {
   background-color: var(--white-color);
 }
 
-/*===== PAGES =====*/
+/*===== HEADER & NAV =====*/
 .nav {
-  height: 3rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: var(--header-height);
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media screen and (max-width: 968px) {
   .nav__menu {
     position: fixed;
     left: -100%;
-    top: 3rem;
+    top: var(--header-height);
     background-color: var(--white-color);
     width: 80%;
     height: 100%;
     padding: 2rem;
     z-index: var(--z-fixed);
-    -webkit-transition: .3s;
     transition: .3s;
   }
 }
 
 .nav__item {
   margin-bottom: 2rem;
-  font-weight: 700;
+  font-weight: var(--font-bold);
 }
 
 .nav__link {
@@ -123,36 +108,26 @@ a {
   cursor: pointer;
 }
 
-/*Aparecer menu*/
+/* Show menu */
 .show {
   left: 0;
 }
 
 /*===== Home =====*/
 .home {
-  height: calc(100vh - 3rem);
-  display: -ms-grid;
+  height: 100vh;
   display: grid;
-  -ms-grid-rows: 1fr 1.5fr;
-      grid-template-rows: 1fr 1.5fr;
-      grid-template-areas: 'sneaker';
+  grid-template-rows: 1fr 1.5fr;
+  grid-template-areas: 'sneaker';
   overflow: hidden;
 }
 
 /*===== Sneaker =====*/
 .sneaker {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: sneaker;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   padding: 2rem 0;
   position: relative;
 }
@@ -162,7 +137,6 @@ a {
   height: 240px;
   background-color: var(--primary);
   border-radius: 50%;
-  -webkit-transition: .5s;
   transition: .5s;
 }
 
@@ -174,11 +148,9 @@ a {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  -webkit-transform: rotate(30deg);
-          transform: rotate(30deg);
+  transform: rotate(30deg);
   opacity: 0;
-  -webkit-filter: drop-shadow(0px 10px 10px rgba(17, 17, 17, 0.4));
-          filter: drop-shadow(0px 10px 10px rgba(17, 17, 17, 0.4));
+  filter: drop-shadow(0px 10px 10px rgba(17, 17, 17, 0.4));
 }
 
 .sneaker__img.shows {
@@ -201,8 +173,7 @@ a {
 
 .sneaker__color.active {
   border: 2px solid var(--white-color);
-  -webkit-box-shadow: 0 0 2px black;
-          box-shadow: 0 0 2px black;
+  box-shadow: 0 0 2px black;
 }
 
 .sneaker__colors-one {
@@ -220,7 +191,7 @@ a {
 
 .data__subtitle {
   font-size: var(--normal-font-size);
-  font-weight: 500;
+  font-weight: var(--font-medium);
 }
 
 .data__title {
@@ -233,12 +204,8 @@ a {
 }
 
 .actions {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 /*===== Size =====*/
@@ -248,8 +215,6 @@ a {
 }
 
 .size__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -278,15 +243,9 @@ a {
 .cant__content {
   width: 100px;
   height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--primary);
   color: var(--white-color);
   padding: .5rem;
@@ -302,17 +261,10 @@ a {
   height: 83px;
   background-color: var(--white-color);
   border-radius: 1.5rem 1.5rem 0 0;
-  -webkit-box-shadow: 0px 0px 20px rgba(17, 17, 17, 0.25);
-          box-shadow: 0px 0px 20px rgba(17, 17, 17, 0.25);
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-shadow: 0px 0px 20px rgba(17, 17, 17, 0.25);
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .preci__title {
@@ -327,17 +279,15 @@ a {
   border-radius: .5rem;
 }
 
-/*===== MEDIA QUERIS =====*/
+/*===== BREAKPOINTS =====*/
 @media screen and (min-width: 968px) {
   body {
     margin: 0;
   }
   .nav {
-    height: 4rem;
+    height: calc(var(--header-height) + 1.5rem);
   }
   .nav__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .nav__item {
@@ -349,19 +299,11 @@ a {
   }
   .home {
     height: 100vh;
-    -ms-grid-columns: max-content max-content;
-        grid-template-columns: -webkit-max-content -webkit-max-content;
-        grid-template-columns: max-content max-content;
-    -ms-grid-rows: max-content;
-        grid-template-rows: -webkit-max-content;
-        grid-template-rows: max-content;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-column-gap: 6rem;
-            column-gap: 6rem;
+    grid-template-columns: max-content max-content;
+    grid-template-rows: max-content;
+    align-content: center;
+    justify-content: center;
+    column-gap: 6rem;
   }
   .sneaker__figure {
     width: 430px;
@@ -380,9 +322,7 @@ a {
     display: inline-block;
   }
   .info {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    align-self: center;
   }
   .data {
     margin-bottom: 2.5rem;
@@ -404,15 +344,12 @@ a {
   .preci {
     position: initial;
     background-color: initial;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    justify-content: space-between;
+    box-shadow: none;
   }
   .preci__title {
     color: var(--black-color);
-    font-weight: 500;
+    font-weight: var(--font-medium);
   }
 }
 
