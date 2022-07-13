@@ -40,6 +40,8 @@
 /*===== BASE =====*/
 *,::before,::after{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body{
     font-family: var(--body-font);
@@ -91,8 +93,12 @@ a{
             transition: .3s;
         }
     }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
     &__item{
-        margin-bottom: 2rem;
         font-weight: var(--font-bold);
     }
     &__link{
@@ -267,11 +273,8 @@ a{
         height: calc(var(--header-height) + 1.5rem);
 
         &__list{
-            display: flex;
-        }
-        &__item{
-            margin-right: 3rem;
-            margin-bottom: 0;
+            flex-direction: row;
+            column-gap: 3rem;
         }
         &__toggle{
             display: none;
