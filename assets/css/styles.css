@@ -124,18 +124,17 @@ a {
 .home {
   height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 1.5fr;
-  grid-template-areas: 'sneaker';
+  row-gap: 3.5rem;
+  grid-template-rows: repeat(2, max-content);
   overflow: hidden;
 }
 
 /*===== Sneaker =====*/
 .sneaker {
-  grid-area: sneaker;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
+  margin-top: 6rem;
   position: relative;
 }
 
@@ -284,13 +283,11 @@ a {
   color: var(--white-color);
   padding: 1.25rem 3.125rem;
   border-radius: .5rem;
+  transition: box-shadow .4s;
 }
 
 /*===== BREAKPOINTS =====*/
 @media screen and (min-width: 968px) {
-  body {
-    margin: 0;
-  }
   .nav {
     height: calc(var(--header-height) + 1.5rem);
   }
@@ -309,6 +306,9 @@ a {
     justify-content: center;
     column-gap: 6rem;
   }
+  .sneaker {
+    margin: 0;
+  }
   .sneaker__figure {
     width: 430px;
     height: 430px;
@@ -320,7 +320,7 @@ a {
   }
   .sneaker__colors {
     right: initial;
-    bottom: 0;
+    bottom: -3rem;
   }
   .sneaker__colors span {
     display: inline-block;
