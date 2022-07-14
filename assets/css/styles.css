@@ -287,6 +287,34 @@ a {
 }
 
 /*===== BREAKPOINTS =====*/
+@media screen and (max-width: 320px) {
+  .home {
+    row-gap: 1.5rem;
+  }
+  .sneaker__figure {
+    width: 210px;
+    height: 210px;
+  }
+  .sneaker img {
+    width: 230px;
+  }
+  .sneaker__colors {
+    right: 1%;
+  }
+  .preci__title {
+    font-size: var(--normal-font-size);
+  }
+  .preci__button {
+    padding: 1.25rem 2rem;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .data__description {
+    width: 350px;
+  }
+}
+
 @media screen and (min-width: 968px) {
   .nav {
     height: calc(var(--header-height) + 1.5rem);
