@@ -59,7 +59,7 @@ ul{
 a{
     text-decoration: none;
 }
-/*=====  LAYOUT =====*/
+/*===== LAYOUT =====*/
 .grid{
     max-width: 1200px;
     margin-left: 1rem;
@@ -113,7 +113,7 @@ a{
     left: 0;
 }
 
-/*===== Home =====*/
+/*===== HOME =====*/
 .home{
     height: 100vh;
     display: grid;
@@ -220,8 +220,8 @@ a{
         color: var(--white-color);
     }
 }
-/*===== Cant =====*/
-.cant{
+/*===== Qty =====*/
+.quantity{
     &__title{
         font-size: var(--normal-font-size);
         margin-bottom: 1rem;
@@ -238,8 +238,8 @@ a{
         border-radius: .25rem;
     }
 }
-/*===== Preci =====*/
-.preci{
+/*===== Price =====*/
+.price{
     position: fixed;
     left: 0;
     bottom: 0;
@@ -265,6 +265,7 @@ a{
     }
 }
 /*===== BREAKPOINTS =====*/
+/* For small devices */
 @media screen and (max-width: 320px){
     .home{
         row-gap: 1.5rem;
@@ -282,7 +283,7 @@ a{
         }
     }
 
-    .preci{
+    .price{
         &__title{
             font-size: var(--normal-font-size);
         }
@@ -293,6 +294,7 @@ a{
 
 }
 
+/* For medium devices */
 @media screen and (min-width: 480px){
     .data__description{
         width: 350px;
@@ -323,7 +325,7 @@ a{
         margin-bottom: 3rem;
     }
 
-    .preci{
+    .price{
         position: initial;
         background-color: initial;
         justify-content: space-between;
@@ -338,6 +340,7 @@ a{
 
 }
 
+/* For large devices */
 @media screen and(min-width: 968px){
     .nav{
         height: calc(var(--header-height) + 1.5rem);
@@ -390,6 +393,8 @@ a{
         line-height: 35px;
     }
 }
+
+
 @media screen and (min-width: 1200px){
     .grid{
         margin-left: auto;

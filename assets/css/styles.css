@@ -59,7 +59,7 @@ a {
   text-decoration: none;
 }
 
-/*=====  LAYOUT =====*/
+/*===== LAYOUT =====*/
 .grid {
   max-width: 1200px;
   margin-left: 1rem;
@@ -120,7 +120,7 @@ a {
   left: 0;
 }
 
-/*===== Home =====*/
+/*===== HOME =====*/
 .home {
   height: 100vh;
   display: grid;
@@ -240,13 +240,13 @@ a {
   color: var(--white-color);
 }
 
-/*===== Cant =====*/
-.cant__title {
+/*===== Qty =====*/
+.quantity__title {
   font-size: var(--normal-font-size);
   margin-bottom: 1rem;
 }
 
-.cant__content {
+.quantity__content {
   width: 100px;
   height: 30px;
   display: flex;
@@ -258,8 +258,8 @@ a {
   border-radius: .25rem;
 }
 
-/*===== Preci =====*/
-.preci {
+/*===== Price =====*/
+.price {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -273,12 +273,12 @@ a {
   align-items: center;
 }
 
-.preci__title {
+.price__title {
   font-size: var(--big-font-size);
   color: var(--black-color);
 }
 
-.preci__button {
+.price__button {
   background-color: var(--primary);
   color: var(--white-color);
   padding: 1.25rem 3.125rem;
@@ -287,6 +287,7 @@ a {
 }
 
 /*===== BREAKPOINTS =====*/
+/* For small devices */
 @media screen and (max-width: 320px) {
   .home {
     row-gap: 1.5rem;
@@ -301,14 +302,15 @@ a {
   .sneaker__colors {
     right: 1%;
   }
-  .preci__title {
+  .price__title {
     font-size: var(--normal-font-size);
   }
-  .preci__button {
+  .price__button {
     padding: 1.25rem 2rem;
   }
 }
 
+/* For medium devices */
 @media screen and (min-width: 480px) {
   .data__description {
     width: 350px;
@@ -335,19 +337,20 @@ a {
   .actions {
     margin-bottom: 3rem;
   }
-  .preci {
+  .price {
     position: initial;
     background-color: initial;
     justify-content: space-between;
     box-shadow: none;
     padding: 0;
   }
-  .preci__title {
+  .price__title {
     color: var(--black-color);
     font-weight: var(--font-medium);
   }
 }
 
+/* For large devices */
 @media screen and (min-width: 968px) {
   .nav {
     height: calc(var(--header-height) + 1.5rem);
